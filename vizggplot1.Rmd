@@ -1,0 +1,103 @@
+---
+title: 'Visualização'
+subtitle: 'ProbEst'
+author: 'nicole'
+date: '`r format(Sys.Date(), "%d/%m/%y")`'
+lang: 'pt'
+output: 
+  html_document:
+    theme: readable
+            #http://bootswatch.com/3/readable/
+    highlight: tango
+    toc: true
+    toc-depth: 3
+    number_sections: true
+    fig_width: 7
+    fig_height: 4
+    fig_caption: true
+    self_contained: true
+---
+
+
+<!-- Definir as opções para todos os chuncks do doc: -->
+<!-- Biblioteca p criar sumário de dados: library(summarytools) -->
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.align= "center")
+#library(gt)
+
+library(summarytools)
+st_options(
+  plain.ascii= FALSE,
+  dfSummary.varnumbers= FALSE,
+  dfSummary.style= "grid",
+  dfSummary.graph.magnif= .75
+)
+
+library(tidyverse)
+theme_set(                               
+  theme_linedraw() +                     # Set simple theme for ggplot
+    theme(                               # with some tweaks
+      axis.title.y.left= element_text(   
+        angle= 0,                        # Never rotate y axis title
+        margin= margin(r= 20),          # Separate y axis title a little
+        vjust= .5                        # Leave y axis title in the middle
+      ),
+      axis.title.x.bottom= element_text(
+        margin= margin(t= 20)            # Separate x axis title a little
+      ),
+      axis.line= element_blank(),        # No axis lines
+      panel.border= element_blank(),     # No frame
+      panel.grid.minor= element_blank()  # No grid minor lines
+    )
+)
+
+```
+
+```{js javascript-init, echo= FALSE}
+
+//Make off-site links open in a new wondow/tab
+function changeTargets() {
+  $("a").attr(
+    "target", function(){
+      // Load local links locally
+      if(this.host== location.host) return "_self"
+      // Load off-site links in a new window
+      else return "_blank";
+    }
+  );
+}
+
+// Execute when document is ready
+$(
+  changeTargets
+)
+```
+
+# Visualização com `ggplot2`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
